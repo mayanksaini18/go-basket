@@ -33,7 +33,7 @@ export default function AuthLayout({
       {/* RIGHT */}
       <div className="hidden lg:block lg:w-1/2 relative bg-slate-100">
         <Image
-          src="https://images.unsplash.com/photo-1513672494107-cd9d848a383e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJveGVzfGVufDB8fDB8fHww"
+          src="https://res.cloudinary.com/dq7yftv7z/image/upload/v1766051856/david-trinks-RUlX79xwyzI-unsplash_ox1ruv.jpg"
           alt="Auth visual"
           fill
           priority

@@ -47,6 +47,8 @@
 }
 
 :root {
+  --brand-green: #E4FF97;      /* neon green */
+  --brand-green-dark:#273603;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);

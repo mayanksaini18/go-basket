@@ -1,7 +1,10 @@
 // app/page.tsx
+"use client";
+
 import AuthLayout from "@/components/comp/AuthLayout";
 import SocialButton from "@/components/comp/SocialButton";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function HomePage() {
   return (
@@ -10,12 +13,14 @@ export default function HomePage() {
          subtitle={
            <p className="text-sm text-slate-500">
              Already have an account?{" "}
+             <Link href="/login">
              <button
               
-               className="text-emerald-600 hover:underline"
-             >
+              className="text-emerald-600 hover:underline"
+              >
                Login
              </button>
+               </Link>
            </p>
          }
          image=""
@@ -29,10 +34,10 @@ export default function HomePage() {
              Start for free →
            </button>
            </Link>
-   
-           <SocialButton label="Sign up with GitHub" icon={undefined} />
-           <SocialButton label="Sign up with Apple" icon={undefined} />
-           <SocialButton label="Sign up with Google" icon={undefined} />
+           <br /><br />
+           <SocialButton label="Sign up with GitHub" icon={undefined} onClick={() => signIn("github")} />
+           <SocialButton label="Sign up with Apple" icon={undefined} onClick={() => signIn("apple")} />
+           <SocialButton label="Sign up with Google" icon={undefined} onClick={() => signIn("google")} />
          </div>
        </AuthLayout>
   );
