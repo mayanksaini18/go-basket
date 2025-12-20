@@ -8,6 +8,9 @@ import ProductCard from "@/components/comp/Productcard"
 import CategoryTabs from "@/components/comp/Categorytabs" 
 import Navbar from "@/components/comp/Navbar" 
 import { useState } from "react";
+import { AnimatedText } from "@/components/comp/animated-text";
+import { Reveal } from "@/components/comp/reveal";
+import { HeroSection } from "@/components/comp/hero-section";
 
 export default function HomePage() {
     const [category, setCategory] = useState("Popular");
@@ -15,13 +18,20 @@ export default function HomePage() {
     <main className="min-h-screen bg-background px-6">
      {/* top Bar */}
     <Navbar/>
-      {/* HERO SECTION */}
+     
+      {/* <HeroSection/> */}
       <section className="max-w-6xl mx-auto text-center pt-28 pb-16">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight " >
-          SHOP PRODUCTS <br />
-          YOU’LL LOVE
-        </h1>
+       <Reveal>
+         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight " >
+         
+         <AnimatedText text=" SHOP PRODUCTS" delay={0.5} />
+          <span className="italic font-medium">
+            <br />
+                <AnimatedText text=" that YOU’LL LOVE." delay={1.1} />
+              </span>
 
+          </h1>
+       </Reveal>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
           Discover premium products with quality, comfort, and modern design —
           delivered right to your doorstep.

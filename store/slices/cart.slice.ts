@@ -3,6 +3,7 @@
 import { createSlice , PayloadAction }  from "@reduxjs/toolkit";
 import { Product } from "@/lib/types";
 
+
 interface CartItem extends Product{
   id: string;
   name: string;
@@ -36,9 +37,14 @@ const cartSlice = createSlice({
       if (item && item.quantity >1) item.quantity--;
       else state.items = state.items.filter(i =>i.id !== action.payload);
     },
-}
+    clearCart(state) {
+  state.items = [];
+    },
+    removeItem(state, action: PayloadAction<string>) {
+  state.items = state.items.filter(i => i.id !== action.payload);
+},
+  }
 })
 
-
-export const { addItem, increment , decrement  } = cartSlice.actions;
+export const { addItem, increment , decrement ,clearCart  ,removeItem} = cartSlice.actions;
 export default cartSlice.reducer;

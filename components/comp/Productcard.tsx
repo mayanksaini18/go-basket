@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addItem, increment, decrement } from "@/store/slices/cart.slice";
 
@@ -22,58 +22,69 @@ export default function ProductCard(props: Props) {
   );
 
   return (
-    
-    <Card className="relative w-[170px] transition hover:shadow-lg">
-      
-      <CardContent className="p-4 space-y-2">
-        <div className="flex justify-center">
-          <Image
-            src={props.image}
-            alt={props.name}
-            width={90}
-            height={90}
-            className="object-contain"
-          />
-        </div>
+    <Card className="w-[180px] rounded-xl border hover:shadow-md transition">
+      {/* IMAGE */}
+      <div className="flex justify-center items-center h-[120px]  rounded-t-xl">
+        <Image
+          src={props.image}
+          alt={props.name}
+          width={90}
+          height={90}
+          className="object-contain"
+        />
+      </div>
 
-        <p className="text-sm font-medium">{props.name}</p>
-        <p className="text-xs text-muted-foreground">{props.unit}</p>
-        <p className="font-semibold">₹{props.price}</p>
+      {/* CONTENT */}
+      <div className="p-3 space-y-1">
+        <p className="text-sm font-medium line-clamp-1">
+          {props.name}
+        </p>
+        <p className="text-xs text-muted-foreground">
+          {props.unit}
+        </p>
 
-        {/* ADD / QUANTITY */}
-        {!item ? (
-          <Button
-            variant="neon"
-            size="sm"
-            className="w-full mt-2"
-            onClick={() =>
-              dispatch(addItem({ ...props, quantity: 1 }))
-            }
-          >
-            Add
-          </Button>
-        ) : (
-          <div className="flex items-center justify-between mt-2">
+        <div className="flex items-center justify-between pt-1">
+          <span className="font-semibold text-base">
+            ₹{props.price}
+          </span>
+
+          {!item ? (
             <Button
-              size="icon"
-              variant="outline"
-              onClick={() => dispatch(decrement(props.id))}
-            >
-              <Minus size={14} />
-            </Button>
-
-            <span className="font-semibold">{item.quantity}</span>
-
-            <Button
-              size="icon"
               variant="neon"
-              onClick={() => dispatch(increment(props.id))}
+              size="sm"
+              onClick={() =>
+                dispatch(addItem({ ...props, quantity: 1 }))
+              }
             >
-              <Plus size={14} />
+              Add
             </Button>
-          </div>
-        )}
-      </CardContent>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Button
+                size="icon"
+                variant="outline"
+                className="h-7 w-7"
+                onClick={() => dispatch(decrement(props.id))}
+              >
+                <Minus size={14} />
+              </Button>
+
+              <span className="text-sm font-semibold">
+                {item.quantity}
+              </span>
+
+              <Button
+                size="icon"
+                variant="neon"
+                className="h-7 w-7"
+                onClick={() => dispatch(increment(props.id))}
+              >
+                <Plus size={14} />
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
     </Card>
   );
 }

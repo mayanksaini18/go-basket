@@ -1,12 +1,18 @@
-// app/cart/page.tsx
 "use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { increment, decrement } from "@/store/slices/cart.slice";
-import { Plus, Minus } from "lucide-react";
+import {
+  increment,
+  decrement,
+  removeItem,
+  clearCart,
+} from "@/store/slices/cart.slice";
+import { Plus, Minus, Trash2, Currency } from "lucide-react";
+
+import { loadRazorpay } from "@/lib/razorpay";
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
@@ -17,25 +23,88 @@ export default function CartPage() {
     0
   );
 
+  const handleCheckout = async () => {
+    const isLoaded = await loadRazorpay();
+    if (!isLoaded) {
+      alert("Razorpay SDK failed to load");
+      return;
+    }
+
+    if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID) {
+      alert("Razorpay Key ID is missing");
+      return;
+    }
+
+    //create order
+    const res = await fetch("/api/razorpay/order", {
+      method: "POST",
+      headers: { "content-Type": "application/json" },
+      body: JSON.stringify({ amount: subtotal }),
+    });
+
+    if (!res.ok) {
+      alert("Failed to create order");
+      return;
+    }
+
+    const order = await res.json();
+    console.log(order);
+
+    //open razoprpay
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
+      amount: order.amount,
+      currency: "INR",
+      name: "Go Basket",
+      description: "Order Payment",
+      order_id: order.id,
+
+      handler: function () {
+        dispatch(clearCart());
+        alert("Payment successful !");
+      },
+
+      prefill: {
+        name: "Customer",
+        email: "customer@test.com",
+        contact: "9999999999",
+      },
+
+      theme: {
+        color: "#E4FF97",
+      },
+    };
+
+    const razorpay = new (window as any).Razorpay(options);
+    razorpay.open();
+  };
+
   if (items.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <p className="text-muted-foreground">Your cart is empty 🛒</p>
+        <Button variant="neon" onClick={() => history.back()}>
+          Continue Shopping
+        </Button>
       </div>
     );
   }
 
   return (
-    <main className="max-w-4xl mx-auto p-6 space-y-6">
-      
-      <h1 className="text-2xl font-bold">Your Cart</h1>
+    <main className="max-w-4xl mx-auto p-6 pb-32 space-y-6">
+      {/* HEADER */}
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Your Cart</h1>
+        <Button variant="ghost" onClick={() => dispatch(clearCart())}>
+          Clear Cart
+        </Button>
+      </div>
 
       {/* CART ITEMS */}
       <div className="space-y-4">
         {items.map((item) => (
           <Card key={item.id}>
             <CardContent className="flex items-center gap-4 p-4">
-              
               {/* IMAGE */}
               <Image
                 src={item.image}
@@ -80,39 +149,72 @@ export default function CartPage() {
               <div className="w-20 text-right font-semibold">
                 ₹{item.price * item.quantity}
               </div>
+
+              {/* REMOVE */}
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => dispatch(removeItem(item.id))}
+              >
+                <Trash2 size={16} />
+              </Button>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      {/* CART SUMMARY */}
-      <Card>
+      {/* DESKTOP SUMMARY */}
+      <Card className="hidden md:block">
         <CardContent className="p-4 space-y-4">
-          <div className="flex justify-between text-sm">
-            <span>Subtotal</span>
-            <span>₹{subtotal}</span>
-          </div>
-
-          <div className="flex justify-between text-sm text-muted-foreground">
-            <span>Delivery</span>
-            <span>₹0</span>
-          </div>
-
-          <div className="flex justify-between font-semibold text-lg">
-            <span>Total</span>
-            <span>₹{subtotal}</span>
-          </div>
-
+          <Summary subtotal={subtotal} />
           <Button
             variant="neon"
             size="lg"
             className="w-full"
+            onClick={handleCheckout}
           >
             Proceed to Checkout
           </Button>
         </CardContent>
       </Card>
 
+      {/* MOBILE STICKY CHECKOUT */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t p-4 md:hidden">
+        <div className="flex justify-between font-semibold mb-2">
+          <span>Total</span>
+          <span>₹{subtotal}</span>
+        </div>
+        <Button
+          variant="neon"
+          size="lg"
+          className="w-full"
+          onClick={handleCheckout}
+        >
+          Checkout
+        </Button>
+      </div>
     </main>
+  );
+}
+
+/* 🔹 Summary Component */
+function Summary({ subtotal }: { subtotal: number }) {
+  return (
+    <>
+      <div className="flex justify-between text-sm">
+        <span>Subtotal</span>
+        <span>₹{subtotal}</span>
+      </div>
+
+      <div className="flex justify-between text-sm text-muted-foreground">
+        <span>Delivery</span>
+        <span>₹0</span>
+      </div>
+
+      <div className="flex justify-between font-semibold text-lg">
+        <span>Total</span>
+        <span>₹{subtotal}</span>
+      </div>
+    </>
   );
 }
