@@ -6,7 +6,7 @@ import { Reveal } from './reveal'
 
 const BestSeller = () => {
   return (
-    <div>
+    
       <section className="max-w-6xl mx-auto pt-10">
           <Reveal>
           <div className="text-left mb-16">
@@ -26,7 +26,7 @@ const BestSeller = () => {
           ))}
         </div>
       </section>
-    </div>
+    
   )
 }
 

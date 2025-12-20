@@ -11,6 +11,7 @@ import { AnimatedText } from "@/components/comp/animated-text";
 import { Reveal } from "@/components/comp/reveal";
 import { HeroSection } from "@/components/comp/hero-section";
 import BestSeller from "@/components/comp/BestSeller";
+import CategoryCarousel from "@/components/comp/CategoryCarousel";
 
 export default function HomePage() {
   const [category, setCategory] = useState("Popular");
@@ -51,6 +52,7 @@ export default function HomePage() {
 
       {/* PRODUCTS SECTION */}
       <BestSeller/>
+      <CategoryCarousel/>
     </main>
   );
 }
