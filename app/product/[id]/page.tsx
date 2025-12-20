@@ -39,35 +39,42 @@ export default function ProductPage() {
         <ChevronLeft size={20} /> Back
       </Button>
 
-       <div className="grid md:grid-cols-2 gap-12">
-      {/* image */}
-      <div className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 flex items-center justify-center aspect-square relative">
+      <div className="grid md:grid-cols-2 gap-12">
+        {/* image */}
+        <div className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 flex items-center justify-center aspect-square relative">
           <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-contain p-8"
-          priority
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-8"
+            priority
           />
-      </div>
+        </div>
 
         {/* details */}
-      <div className="space-y-6 py-4">
+        <div className="space-y-6 py-4">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight">{product.name}</h1>
+            <h1 className="text-4xl font-bold tracking-tight">
+              {product.name}
+            </h1>
             <p className="text-lg text-muted-foreground mt-2">{product.unit}</p>
           </div>
-          
+
           <p className="text-3xl font-bold">₹{product.price}</p>
-             <p className="text-lg leading-relaxed text-muted-foreground">
-            {product.description || "No description available for this product."}
-          </p>
-             <Button size="lg" variant="neon" className="w-full md:w-auto px-8" onClick={() => dispatch(addItem({ ...product, quantity: 1 }))}>
+          {/* <p className="text-lg leading-relaxed text-muted-foreground">
+            {product.description ||
+              "No description available for this product."}
+          </p> */}
+          <Button
+            size="lg"
+            variant="neon"
+            className="w-full md:w-auto px-8"
+            onClick={() => dispatch(addItem({ ...product, quantity: 1 }))}
+          >
             Add to Cart
           </Button>
+        </div>
       </div>
     </div>
-
-  </div>
   );
 }
