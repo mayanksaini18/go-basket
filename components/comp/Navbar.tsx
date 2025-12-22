@@ -14,14 +14,14 @@ export default function Navbar() {
     <nav className="sticky top-0 backdrop-blur-md
   bg-white/60 dark:bg-black/40 flex items-center justify-between border-b border-white/20 ">
       <div className="flex items-center h-16 gap-2">
-        <Link href="/" className="text-xl font-bold tracking-tight">
+        {/* <Link href="/" className="text-xl font-bold tracking-tight">
           <Image
             src={"/images/Go-basket-Logo.png"}
-            alt="go-basket Logo"
+            alt="Logo"
             width={38}
             height={38}
           />
-        </Link>
+        </Link> */}
    
        </div>
 
