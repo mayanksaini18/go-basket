@@ -6,6 +6,7 @@ import { PackageCheck, Rocket, ShieldCheck } from "lucide-react" // Added Packag
 import { Reveal } from "./reveal"
 import { BlurPanel } from "./blur-panel"
 import { AnimatedText } from "./animated-text"
+import Image from "next/image"
 
 export function HeroSection() {
       const containerRef = useRef<HTMLDivElement>(null)
@@ -53,14 +54,7 @@ export function HeroSection() {
         animate={{ scale: 1 }}
         transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        {/* <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/u3195299943_une_vue_sur_lespace_toil_--ar_11_--sref_httpss.mj_f1cd1575-c301-46fa-8b30-665ae1ab22a0_3_bloom_subtle_6x.png-EslKdscYhdWOUeP4RBajclEejxh8iO.jpeg"
-          alt="KATACHI Studio - Elegant interior with sage green walls and terracotta furniture overlooking surreal landscape"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        /> */}
+       
         <div className="absolute inset-0 bg-black/20" />
       </motion.div>
 
