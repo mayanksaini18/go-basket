@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Magnet from "../Magnet";
 
 const greeting = () => {
   return (
@@ -13,7 +14,7 @@ const greeting = () => {
           width={208}
           height={208}
         />
-      <Button variant="neon" className="flex items-center gap-2 px-6 py-4">
+      <Button variant={"neon"} className="flex items-center gap-2 px-6 py-4">
         <span>Go basket</span>
       </Button>
       </div>
