@@ -4,12 +4,12 @@
 import Link from "next/link";
 
 
-import Greeting from "@/components/comp/greeting";
+import Greeting from "@/components/comp/Greeting";
 
 export default function HomePage() {
   return (
     <div>
-      <Link href={"/home"}>
+      <Link href={"/login"}>
       <Greeting/>
       </Link>
     </div>
