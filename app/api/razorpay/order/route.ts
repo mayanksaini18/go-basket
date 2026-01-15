@@ -2,7 +2,7 @@ import Razorpay from "razorpay";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+  if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
     return NextResponse.json(
       { error: "Razorpay credentials missing" },
       { status: 500 }
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     // ✅ Initialize INSIDE function
     const razorpay = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
+      key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_KEY_SECRET,
     });
 
