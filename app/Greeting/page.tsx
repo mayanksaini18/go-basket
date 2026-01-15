@@ -9,10 +9,10 @@ import Navbar from "@/components/comp/Navbar";
 import { useState } from "react";
 import { AnimatedText } from "@/components/comp/animated-text";
 import { Reveal } from "@/components/comp/reveal";
-import { HeroSection } from "@/components/comp/hero-section";
+import { HeroSection } from "@/components/comp/HeroSection";
 import BestSeller from "@/components/comp/BestSeller";
 import CategoryCarousel from "@/components/comp/CategoryCarousel";
-import { Footer } from "@/components/comp/footer";
+import { Footer } from "@/components/comp/Footer";
 
 export default function HomePage() {
   const [category, setCategory] = useState("Popular");
