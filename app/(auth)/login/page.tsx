@@ -89,13 +89,15 @@ export default function LoginPage() {
 
         {/* Forgot password */}
         <div className="flex justify-end">
+         
           <button
             type="button"
-            onClick={() => router.push("/forgot-password")}
+            onClick={() => router.push("/forgetPassword")}
             className="text-sm text-muted-foreground hover:text-foreground hover:underline"
           >
             Forgot password?
           </button>
+     
         </div>
 
         {/* Submit */}
