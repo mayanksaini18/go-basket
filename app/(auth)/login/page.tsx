@@ -7,11 +7,11 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useRouter } from "next/navigation";
 
-import AuthLayout from "@/components/comp/AuthLayout";
+import AuthLayout from "../../../components/comp/AuthLayout";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { Label } from "../../../components/ui/label";
 import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
