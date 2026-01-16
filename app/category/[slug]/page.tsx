@@ -128,7 +128,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                                             price: product.price,
                                             image: product.image,
                                             quantity: 1,
-                                            unit: product.unit
+                                            // unit: product.unit
                                         }));
                                     }}
                                 >
