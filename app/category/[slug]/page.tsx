@@ -4,13 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SlidersHorizontal, ChevronDown, Star, Plus } from "lucide-react";
-import Navbar from "../../../components/comp/Navbar";
-import { Footer } from "../../../components/comp/Footer";
-import { Button } from "../../../components/ui/button";
-import { Separator } from "../../../components/ui/separator";
-import { Checkbox } from "../../../components/ui/checkbox";
-import { useAppDispatch } from "../../../store/hooks";
-import { addItem } from "../../../store/slices/cart.slice";
+import Navbar from "@/components/comp/Navbar";
+import { Footer } from "@/components/comp/Footer";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useAppDispatch } from "@/store/hooks";
+import { addItem } from "@/store/slices/cart.slice";
 
 // Mock Data
 const products = Array.from({ length: 8 }).map((_, i) => ({
