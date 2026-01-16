@@ -7,10 +7,10 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../firebase"; // Adjust path if needed
 import Link from "next/link";
 
-import AuthLayout from "@/components/comp/AuthLayout";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import AuthLayout from "../../../components/comp/AuthLayout";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { Label } from "../../../components/ui/label";
 import { Loader2, MailCheck, ArrowLeft } from "lucide-react";
 
 export default function ForgotPasswordPage() {
