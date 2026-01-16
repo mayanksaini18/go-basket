@@ -22,7 +22,7 @@ export default function NavbarModern() {
             
             <Link href="/" className="flex items-center gap-2">
                 <div className="relative w-8 h-8 rounded-full overflow-hidden bg-green-100 flex items-center justify-center">
-                     <Image src="/images/Go-basket-Logo.png" alt="Logo" width={24} height={24} />
+                     <Image src="/images/go-basket-logo.png" alt="Logo" width={24} height={24} />
                 </div>
                 <span className="font-bold text-lg tracking-tight text-gray-900 hidden sm:block">
                     Go-basket

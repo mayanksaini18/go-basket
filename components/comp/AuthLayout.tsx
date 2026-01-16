@@ -34,7 +34,7 @@ const AuthLayout = ({ title, subtitle, image, children }: AuthLayoutProps) => {
             {/* Mobile Logo (Visible only on small screens) */}
             <div className="lg:hidden flex justify-center mb-4">
                {/* <Image
-                src="/images/Go-basket-Logo.png"
+                src="/images/go-basket-logo.png"
                 alt="Go-basket"
                 width={60}
                 height={60}
@@ -82,7 +82,7 @@ const AuthLayout = ({ title, subtitle, image, children }: AuthLayoutProps) => {
           <div className="flex items-center gap-2 text-lg font-medium">
             <div className="bg-white/90 p-2 rounded-lg backdrop-blur-sm">
                 <Image
-                src="/images/Go-basket-Logo.png"
+                src="/images/go-basket-logo.png"
                 alt="Go-basket Logo"
                 width={32}
                 height={32}

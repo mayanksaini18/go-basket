@@ -16,7 +16,7 @@ const Greeting = () => {
         <Magnet padding={50} disabled={false} magnetStrength={5}>
           <div className="relative flex items-center justify-center p-6 bg-white rounded-full shadow-xl ring-1 ring-gray-100 cursor-pointer transition-transform hover:scale-105">
             <Image
-              src="/images/Go-basket-Logo.png"
+              src="/images/go-basket-logo.png"
               alt="Go-basket Fresh Grocery Logo"
               width={180}
               height={180}
