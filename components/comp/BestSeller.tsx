@@ -61,7 +61,7 @@ export default function BestSeller() {
                         price: parseFloat(product.price.replace('₹', '')),
                         image: product.img,
                         quantity: 1,
-                        unit: product.unit
+                        // unit: product.unit
                     }))}
                 >
                     <Plus className="w-5 h-5" />
