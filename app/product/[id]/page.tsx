@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Navbar from "@/components/comp/Navbar";
-import { Footer } from "@/components/comp/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import Navbar from "../../../components/comp/Navbar";
+import { Footer } from "../../../components/comp/Footer";
+import { Button } from "../../../components/ui/button";
+import { Badge } from "../../../components/ui/badge";
 import { Minus, Plus, ShoppingCart, Truck, ShieldCheck, Leaf } from "lucide-react";
-import { useAppDispatch } from "@/store/hooks";
-import { addItem } from "@/store/slices/cart.slice";
+import { useAppDispatch } from "../../../store/hooks";
+import { addItem } from "../../../store/slices/cart.slice";
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const dispatch = useAppDispatch();
