@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { ShoppingBag, Search, Menu } from "lucide-react";
+import { useAppSelector } from "../../store/hooks";
 
 export default function NavbarModern() {
-  const cartCount = 2;
+  const items = useAppSelector((state) => state.cart.items);
+  const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="fixed top-4 inset-x-0 z-50 flex justify-center px-4">

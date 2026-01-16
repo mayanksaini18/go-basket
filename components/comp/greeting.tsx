@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 import Image from "next/image";
 import Magnet from "../Magnet";
 import { ShoppingBasket, ArrowRight } from "lucide-react"; // Assuming you have lucide-react (standard in shadcn)
@@ -36,6 +37,7 @@ const Greeting = () => {
         </div>
 
         {/* CTA Button */}
+        <Link href="/login">
         <Button 
           variant="neon" 
           size="lg" 
@@ -45,6 +47,7 @@ const Greeting = () => {
           <span>Start Shopping</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Button>
+        </Link>
       </main>
 
       {/* Decorative Background Elements (Optional blobbies) */}
