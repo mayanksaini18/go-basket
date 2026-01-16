@@ -88,7 +88,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                             price: product.price,
                             image: product.image,
                             quantity: quantity,
-                            unit: "each"
+                            // unit: "each"
                         }))}
                     >
                         <ShoppingCart className="mr-2 w-5 h-5" /> Add to Cart — ₹{(product.price * quantity).toFixed(2)}
