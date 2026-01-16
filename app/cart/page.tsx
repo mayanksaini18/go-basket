@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../components/comp/Navbar";
-import { Footer } from "../../components/comp/Footer";
+import Footer from "../../components/comp/footer";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Trash2, ArrowRight, Minus, Plus } from "lucide-react";

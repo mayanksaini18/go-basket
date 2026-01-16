@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/comp/Navbar";
-import { Footer } from "@/components/comp/Footer";
+import Footer from "../../../components/comp/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Minus, Plus, ShoppingCart, Truck, ShieldCheck, Leaf } from "lucide-react";

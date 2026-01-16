@@ -4,7 +4,7 @@ import Navbar from "../../components/comp/Navbar";
 import { HeroSection } from "../../components/comp/HeroSection";
 import GroceryCategories from "../../components/comp/CategoryCarousel";
 import BestSeller from "../../components/comp/BestSeller"; // We will create this below
-import { Footer } from "../../components/comp/Footer";
+import Footer from "../../components/comp/footer";
 
 export default function StorePage() {
   return (
