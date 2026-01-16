@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import { Heart, Plus } from "lucide-react";
 import Image from "next/image";
-import { useAppDispatch } from "@/store/hooks";
-import { addItem } from "@/store/slices/cart.slice";
+import { useAppDispatch } from "../../store/hooks";
+import { addItem } from "../../store/slices/cart.slice";
 
 // Mock Data
 const products = [
