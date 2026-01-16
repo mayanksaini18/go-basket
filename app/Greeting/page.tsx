@@ -12,7 +12,7 @@ import { Reveal } from "@/components/comp/reveal";
 import { HeroSection } from "@/components/comp/HeroSection";
 import BestSeller from "@/components/comp/BestSeller";
 import CategoryCarousel from "@/components/comp/CategoryCarousel";
-import Footer  from "@/components/comp/Footer";
+// import Footer  from "@/components/comp/Footer";
 
 export default function HomePage() {
   const [category, setCategory] = useState("Popular");
@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* PRODUCTS SECTION */}
       <BestSeller/>
       <CategoryCarousel/>
-<Footer/>
+{/* <Footer/> */}
     </main>
   );
 }
