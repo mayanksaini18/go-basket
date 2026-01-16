@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { Plus, Minus } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { addItem, increment, decrement } from "@/store/slices/cart.slice";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { addItem, increment, decrement } from "../../store/slices/cart.slice";
 
 import {useRouter} from "next/navigation";
 
