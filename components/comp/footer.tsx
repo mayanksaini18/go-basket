@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import { Instagram, Twitter, Facebook, ArrowUpRight } from "lucide-react"
 
-export function Footer() {
+export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   // ... (Keep your existing arrays for footerLinks and socialLinks here) ... 
