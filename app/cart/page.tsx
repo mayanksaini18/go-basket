@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/comp/Navbar";
-import { Footer } from "@/components/comp/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Navbar from "../../components/comp/Navbar";
+import { Footer } from "../../components/comp/Footer";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import { Trash2, ArrowRight, Minus, Plus } from "lucide-react";
-import { useAppSelector, useAppDispatch } from "@/store/hooks";
-import { increment, decrement, removeItem } from "@/store/slices/cart.slice";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import { increment, decrement, removeItem } from "../../store/slices/cart.slice";
 import { ShoppingBasket } from "lucide-react";
 
 export default function CartPage() {
