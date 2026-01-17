@@ -21,7 +21,7 @@ export default function NavbarModern() {
             </Button>
             
             <Link href="/" className="flex items-center gap-2">
-                <div className="relative w-8 h-8 rounded-full overflow-hidden bg-green-100 flex items-center justify-center">
+                <div className="relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
                      <Image src="https://res.cloudinary.com/dq7yftv7z/image/upload/v1768631751/Go-basket-logo_gjne60.png" alt="Logo" width={24} height={24} />
                 </div>
                 <span className="font-bold text-lg tracking-tight text-gray-900 hidden sm:block">
