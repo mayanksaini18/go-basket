@@ -16,7 +16,7 @@ const Greeting = () => {
         <Magnet padding={50} disabled={false} magnetStrength={5}>
           <div className="relative flex items-center justify-center p-6 bg-white rounded-full shadow-xl ring-1 ring-gray-100 cursor-pointer transition-transform hover:scale-105">
             <Image
-              src="https://res.cloudinary.com/dq7yftv7z/image/upload/v1766051856/jessica-bulling-8Jau7nWrgmE-unsplash_qj9eal.jpg"
+              src="https://res.cloudinary.com/dq7yftv7z/image/upload/v1768631751/Go-basket-logo_gjne60.png"
               alt="Go-basket Fresh Grocery Logo"
               width={180}
               height={180}
