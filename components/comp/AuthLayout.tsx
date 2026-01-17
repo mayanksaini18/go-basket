@@ -66,8 +66,8 @@ const AuthLayout = ({ title, subtitle, image, children }: AuthLayoutProps) => {
       <div className="hidden lg:block relative bg-muted text-white">
         {/* The Image */}
         <Image
-          src="https://images.unsplash.com/photo-1604719312566-b72d7f960315?q=80&w=2574&auto=format&fit=crop" // Placeholder unsplash image
-          alt="Fresh Vegetables"
+          src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2574&auto=format&fit=crop" 
+            alt="Fresh Vegetables Background"
           fill
           className="object-cover"
         />
